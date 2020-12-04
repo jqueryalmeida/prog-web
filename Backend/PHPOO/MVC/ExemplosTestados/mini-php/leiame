@@ -1,0 +1,7 @@
+Criar o banco
+Importar os scripts de _installation
+Configurar o banco em app/config/config.php
+Acessar com
+admin@demo.com
+12345
+

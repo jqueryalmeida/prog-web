@@ -1,0 +1,4 @@
+Criar banco
+Importar script dbinit.sql
+Configurar banco e URL em config.php
+Configurar pasta no .htaccess do raiz

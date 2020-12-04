@@ -1,0 +1,6 @@
+Criar o banco
+Importar o script mvc.sql
+Configurar o banco em config/database.php
+Entrar com
+prueba
+123456

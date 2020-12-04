@@ -1,0 +1,176 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <!-- https://tutorialathome.in/bootstrap/multi-level-dropdown-menu-bootstrap-->
+         <title>Bootstrap Navbar</title>
+         <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+         <style type="text/css">
+            .bs-example{
+                         margin: 20px;
+             }
+             hr{
+                         margin: 60px 0;
+             }
+            .nav{
+                         background-color:#cf4141;
+             }            
+             .nav-pills>li>a
+             {
+                         border-radius:0px;
+                         color:#fff;
+                         font-weight:bold;
+             }
+             .nav-pills>li.active>a
+             {
+                         background-color:#aa0000;
+             }
+             .nav-pills>li.active>a:hover
+             {
+                         background-color:#aa0000;
+             }
+            .dropdown-toggle
+            {
+                          background-color:#cf4141!important;
+    }
+    .dropdown-menu{
+                          background-color:#cf4141!important;
+    }
+    .dropdown-menu>li>a{
+                           color:#fff;
+                           font-weight:bold;
+    }
+    .dropdown-menu>li>a:hover{
+                           background-color:#aa0000;
+                           background-image:none;
+                           color:#fff;
+    }
+    .divider
+    {
+                             background-color:#fff;
+    }
+
+    .dropdown-submenu
+    {
+
+                                position:relative;
+    }
+    .dropdown-submenu>.dropdown-menu
+    {
+                                   top:0;
+                                   left:100%;
+                                   margin-top:-6px;
+                                   margin-left:-1px;
+                                   -webkit-border-radius:0 6px 6px 6px;
+                                   -moz-border-radius:0 6px 6px 6px;
+                                   border-radius:0 6px 6px 6px;
+    }
+    .dropdown-submenu>a:after
+    {
+                                   display:block;
+                                   content:" ";
+                                   float:right;
+                                   width:0;
+                                   height:0;
+                                   border-color:transparent;
+                                   border-style:solid;
+                                   border-width:5px 0 5px 5px;
+                                   border-left-color:#cccccc;
+                                   margin-top:5px;
+                                   margin-right:-10px;
+    }
+    .dropdown-submenu:hover>a:after
+    {
+                                   border-left-color:#555;
+    }
+    .dropdown-submenu.pull-left
+    {
+                                   float:none;
+    }
+    .dropdown-submenu.pull-left>.dropdown-menu
+    {
+                                   left:-100%;
+                                   margin-left:10px;
+                                   -webkit-border-radius:6px 0 6px 6px;
+                                   -moz-border-radius:6px 0 6px 6px;
+                                   border-radius:6px 0 6px 6px;
+    }
+
+    </style>
+    </head>
+
+    <body>
+    <div class="bs-example">
+    <ul class="nav nav-pills">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Profile</a></li>
+        <li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Messages <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Inbox</a></li>
+                <li><a href="#">Drafts</a></li>
+                <li><a href="#">Sent Items</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Trash</a></li>
+            </ul>
+        </li>
+    <li class="dropdown">
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Courses <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li><a href="#">.NET</a></li>
+            <li><a href="#">Java</a></li>
+            <li class="dropdown dropdown-submenu"><a href="#" data-toggle="dropdown" class="dropdown-toggle">MSOffice</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Word</a></li>
+                    <li class="dropdown dropdown-submenu"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Excel</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Basic</a></li>
+                            <li><a href="#">Advance</a></li>
+                        </ul>
+                    </li>
+    <li><a href="#">Power Point</a></li>
+    <li><a href="#">Access</a></li>
+    </ul>
+
+    </li>
+
+    </ul>
+    </li>
+    <li class="dropdown pull-right">
+    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Admin <b class="caret"></b></a>
+    <ul class="dropdown-menu">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li class="divider"></li>
+    <li><a href="#">Settings</a></li>
+    </ul>
+    </li>
+    </ul>
+
+    </div>
+    <div class="container">
+
+    <h3 style="font-size:2vh;">Tutorial At Home</h3>
+    <p>Free Tutorial for All</p>
+    </div>
+
+    <script lang="javascript">
+    (function($){
+    $(document).ready(function(){
+                                   $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
+                                   event.preventDefault();
+                                   event.stopPropagation();
+                                   $(this).parent().siblings().removeClass('open');
+                                   $(this).parent().toggleClass('open');
+                                   });
+    });
+    })(jQuery);
+    </script>
+
+    </body>
+    </html>
+

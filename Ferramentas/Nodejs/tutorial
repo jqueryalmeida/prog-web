@@ -1,0 +1,150 @@
+Curso gratuito do https://rocketseat.com.br - NodeJS
+https://rocketseat.com.br/starter/curso-gratuito-nodejs
+
+Criar uma API REST com NodeJS
+
+Instalar o NodeJS
+
+Criar uma pasta
+mkdir node-api
+cd node-api
+
+Executar para criar um package.json básico
+npm init -y
+
+Instalar o express
+npm install express
+
+O express é um microframework que ajuda a lidar com rotas e views
+
+package-lock.json - cache das dependências instaladas, para evitar uma reinstalação, evitando conflitos.
+
+Criar o arquivo no raiz do projeto
+server.js contendo
+
+const express = require('express');
+
+// Iniciando o app
+const app = express();
+
+// Iniciando o Mongo
+mongoose.connect('mongodb://localhost:27017/nodeapi');
+
+// Criar uma rota com o express
+app.get('/',(req, res) => {
+    res.send('Olá mundo do NodeJS');
+});
+
+app.listen(3001);
+
+node server
+ou
+node server.js
+
+http://localhost:3001
+
+Instalar para que o node atualize automaticamente a cada alteração (i - install -D desenvolvimento)
+npm i -D nodemon
+
+devDependencies - usadas apenas no ambiente de desenvolvimento. Não serão instaladas em produção
+
+Editar o package.json e adicionar um script para executar o nodemon:
+
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+
+Agora para executar o node usaremos
+npm run dev
+
+Instalar o mongodb como imagem do docker
+
+docker pull mongo
+
+Criar um container
+docker run --name mongodb -p 27017:27017 -d mongo
+
+docker ps
+
+Testar
+http://localhost:27017/
+
+It looks like you are trying to access MongoDB over HTTP on the native driver port.
+
+Baixar o gerenciador de monto
+https://studio3t.com/
+
+Após reiniciar o desktop para levantar a imagem do docker
+docker start mongo
+
+Instalar o mongooss - ORM de bancos não relacionais com MongoDB - manipular bancos via código, no caso com JavaScript
+npm i mongoos
+
+Instalar a biblioteca require-dir que é similar ao autoload no PHP
+npm i require-dir
+
+Importar no server.js e trocar os require por requireDir
+
+
+server.js
+const express = require('express');
+const mongoose = require('mongoose');
+const requireDir = require('require-dir');
+
+// Iniciar app
+const app = express();
+
+// Iniciando o Mongo
+mongoose.connect(
+    "mongodb://localhost:27017/nodeapi",
+     {useNewUrlParser: true}
+);
+
+requireDir('./src/models');     
+
+const Product = mongoose.model('Product');
+
+// Iniciar primeira rota
+app.get('/',(req, res) => {
+    Product.create({
+        title: 'React Native',
+        description: 'Curso de react native',
+        url: 'http://ribafs.org'
+    })
+    return res.send('Olá mundo do NodeJS2');
+});
+
+app.listen('3001');
+
+Criar pastas
+src
+    models
+Criar Product.js dentro de models
+
+const mongoose = require('mongoose');
+
+// Criar um esquema
+const ProductSchema = new mongoose.Schema({
+    title: {
+        type: String,
+        required: true,
+    },
+    description: {
+        type: String,
+        required: true,
+    },
+    url: {
+        type: String,
+        required: true,
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now,
+    }
+});
+
+// Registrar um model na aplicação
+mongoose.model('Product', ProductSchema);
+
+

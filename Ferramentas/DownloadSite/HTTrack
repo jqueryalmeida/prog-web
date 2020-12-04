@@ -1,0 +1,27 @@
+Conversão de site dinâmico em estático
+
+Com a intenção de pegar um site em Joomla e abrigar inteiramente no GitHub
+
+Encontrei duas boas alternativas, que foi uusando o wget pela linha de comando do Linuux ou de ooutro SO
+
+E também o Httrack - http://www.httrack.com/page/2/
+
+São muito aprecidos os resultados mas preferi o Httrack.
+
+Instalei o Httrack em uma máquina virtual com Windows e fiz a cópia do site, no caso o http://ribafs.org a ser hospedado no GitHub em https://ribafs.github.io
+
+O Httrack é muito simples de usar. Faça o download e instale. Eu apenas altero dois parâmetros. Veja:
+
+- Abra o HTTrack
+
+- Clique em Avançar
+
+- Em nome do projeto entre um nome. Ex: ribafs e clique em Avançar
+
+- Em Endereço web (URL) digite a URL completa para fazer oo download. Ex.: http://ribafs.org/portal/
+
+- Então clique no botão Definir as opções. Então clique em Limites e altere Profundidade máxima para 4 e Máximo de profundidade externa para 4. Pode ser que 3 resolva oou precise usar 5. Experimente. Clique em OK e em Avançar
+
+-Então clique em Concluir e aguarde que ele conclua mostrando a mensagem de concluído. Então clique em Concluir e Sair
+
+-Talvez queira efetuar alguns ajustes antes de publicar. Experimente em seu desktop e divirta-se!

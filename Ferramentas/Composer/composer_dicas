@@ -1,0 +1,37 @@
+{
+    "name": "picahielos/bookstore",
+    "description": "Manages an online bookstore.",
+    "minimum-stability": "stable",
+    "license": "Apache-2.0",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Antonio Lopez",
+            "email": "antonio.lopez.zapata@gmail.com"
+        }
+    ],
+    // ...
+}
+
+Comandos básicos:
+- init
+- require
+- remove
+- update
+- install
+- dump-autoload
+
+Instalar sem dependências
+composer install --no-dev
+
+Minimum Stability Settings
+
+Composer accepts these flags as minimum-stability settings. The default setting for minimum-stability if not provided is assumed to be stable, but you could define any of the flags down the hierarchy.
+
+– stable (most stable)
+– RC
+– beta
+– alpha
+– dev (least stable)
+
+

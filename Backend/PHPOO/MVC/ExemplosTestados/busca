@@ -1,0 +1,15 @@
+Buscas no GitHub por
+php framework scratch
+php mvc pdo
+php mvc crud
+
+https://github.com/search?p=2&q=php+framework+scratch&type=Repositories -150
+https://github.com/search?p=2&q=php+mvc+pdo&type=Repositories - 170
+https://github.com/search?p=2&q=php+mvc+crud&type=Repositories - mais de 300
+
+A esmagedora maioria sem mesmo um README e raros com boa documentação.
+
+Dos testados, a maioria apresenta erro.
+
+Boa parte dos testados está desatualizada, usa ainda PHP 5, não usa composer, namespace, PSR-4, etc
+

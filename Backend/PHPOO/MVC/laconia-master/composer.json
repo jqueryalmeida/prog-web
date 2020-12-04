@@ -1,0 +1,45 @@
+{
+  "name": "taniarascia/laconia",
+  "type": "project",
+  "description": "An MVC framework written without libraries or frameworks (PHP).",
+  "keywords": [
+    "php",
+    "application",
+    "mvc",
+    "scratch",
+    "php7",
+    "oop",
+    "model-view-controller",
+    "object-oriented-programming",
+    "mysql",
+    "pdo",
+    "web app"
+  ],
+  "homepage": "https://laconia.dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tania Rascia",
+      "homepage": "https://www.taniarascia.com",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/taniarascia/laconia/issues",
+    "source": "https://github.com/taniarascia/laconia"
+  },
+  "autoload": {
+    "classmap": [
+      "src/"
+    ],
+    "files": [
+      "config/credentials.php",
+      "config/constants.php",
+      "config/utility.php"
+    ]
+  },
+  "require": {
+    "php": ">=7.0"
+  },
+  "require-dev": {}
+}

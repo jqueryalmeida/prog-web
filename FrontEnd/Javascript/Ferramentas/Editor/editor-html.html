@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+   <head>
+       <meta charset = "utf-8"/>
+       <title>HTML para o CSS</title>
+       <!--<link rel="stylesheet" href="style.css">-->
+       <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+   </head>
+<body>
+
+        <section><!-- Puxar com float o form para que fique ao lado da tabela -->
+            <div align="center"><br>
+            <h2>Cadastro de Clientes</h2>
+            <form method="POST" action = "cadastro.php">
+            <table id="table">
+            <tr><td>Nome</td><td><input type="text" name="nome" required autofocus></td></tr>
+            <tr><td>E-mail</td><td><input type="email" name="email"></td></tr>
+            <tr><td>Telefone</td><td><input type="tel" name="telefone"></td></tr>
+            <tr><td>Observação</td><td><textarea cols="40" rows="5" name="obs"></textarea></td></tr>
+            <script>
+            CKEDITOR.replace( 'obs' );
+            </script>
+            <tr><td></td><td><input type="submit" value="Enviar"></td></tr>
+            </table>
+            </form>
+            </div>
+        </section>
+<!--https://www.elated.com/adding-wysiwyg-editor-to-your-site/ -->
+</body>
+</html>

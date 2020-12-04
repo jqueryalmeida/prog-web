@@ -1,0 +1,49 @@
+Laragon
+
+Pacote contendo:
+- Apache - 2.4.35/ NGinx - 1.16.0
+- PHP - 7.2.19
+- Memcached
+- Redis
+- MySQL - 5.7.24
+- Ngrok
+- Git
+- Composer
+- Vim
+- Cmdr
+- NodeJS - 12
+- TailBlazer - visualizador de logs
+- Notepad++
+- WinSCP
+- Putty
+- Netstat
+
+Botão Quick Add - para instalação de outros softwares, como PostgreSQL, Sublime, VSCode, Eclipse, Java, etc
+- Laragon, Ferramentas, QuickAdd
+
+Como criar um novo Virtualhost?
+Ficam em c:\laragon ?
+
+Adicionar Notepad++ e Terminal ao botão direito
+
+
+Praticamente cria um ambiente Linux no Windows
+
+MySQL
+login - root
+Senha - (em branco)
+
+Para usar o adminer.php atribuir uma senha ao MySQL:
+- Clicar sobre sobre a seta da barra de tarefas
+	- Então clicar no ícone do Laragon com botão direito
+	- MySQL - Parar MySQL
+	- MySQL - alterar a senha root
+	- MySQL - Iniciar MySQL
+	
+Diretório web
+
+C:/laragon/www
+
+http://laragon.org
+
+

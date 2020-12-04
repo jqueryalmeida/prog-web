@@ -1,0 +1,19 @@
+<?php
+// A ser usada nos métodos index() e edit() dos controllers úteis
+class View{
+	public function __construct($name){
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/'.$name.'/index.php';
+        require APP . 'view/_templates/footer.php';
+	}
+}
+
+/*
+
+Exemplo edit($customer_id)
+...
+            } else {
+                // load views. within the views we can echo out $customer easily
+				$view = new View('customers');
+            }
+

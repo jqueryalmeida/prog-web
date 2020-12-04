@@ -1,0 +1,6 @@
+Acessar o diretório e executar
+composer install
+
+Configurar o bd em App/Config.php
+
+

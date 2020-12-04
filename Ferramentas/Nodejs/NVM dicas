@@ -1,0 +1,72 @@
+NVM dicas
+
+nvm use 10.15.3
+
+Ele passará a usar a versão 10.15.3 do node. Caso não encontre instalará
+
+
+Criar package.json
+
+npm init
+
+nano .nvmrc
+
+10.15.3
+
+nvm use # já pega a versão do .nvmrc
+
+.gitignore
+
+node_modules
+
+nodemon - dá reload automático antes de iniciar
+
+sudo npm install  --save-dev nodemon
+
+HapiJS
+
+sudo npm install --save @hapi/hapi
+
+ESLint - estilo de código
+
+sudo npm install eslint --save-dev
+
+Usando
+Configuração interativa
+./node_modules/eslint/bin/eslint.js --init
+Criará o .eslintrc.json
+
+./node_modules/eslint/bin/eslint.js ./src/index.js
+
+Adicionar as nossas regras em
+"rules": {
+}
+
+Ver em
+http://eslint.org/docs/rules
+
+Adicionar uma rule para que a indentação seja de dois espaços:
+
+"rules": {
+    "indent": ["error", 2]
+}
+
+Testando, executar:
+./node_modules/eslint/bin/eslint.js
+
+Style guide
+https://github.com/airbnb/javascript
+
+Instalando
+sudo npx install -peerdeps --dev eslint-config-airbnb-base
+
+Editar o .eslintrs.json, apagar tudo e deixar assim:
+
+{
+    "extends": "airbnb-base"
+}
+
+Rodar
+./node_modules/eslint/bin/eslint.js ./src/index.js
+Criação de site para a documentação do projeto usando o mkdocs
+As aulas 3 e 5 já tem conteúdo que vale documentar

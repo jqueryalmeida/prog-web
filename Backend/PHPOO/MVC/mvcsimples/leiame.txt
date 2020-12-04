@@ -1,0 +1,12 @@
+para testar:
+
+[1,2,3]
+index.php?modulo=Clientes&acao=ver&id=3 
+index.php?modulo=Fornecedores&acao=ver&id=3
+
+index.php?modulo=Fornecedores&acao=todos
+index.php?modulo=Clientes&acao=todos
+
+Crédito
+https://www.youtube.com/watch?v=vvS7JgEcmic
+https://www.youtube.com/watch?v=eKLYmkXKhI0&list=PLopsP7eNRrgrjulyHfS2RxgCHQhTgUm67&index=2

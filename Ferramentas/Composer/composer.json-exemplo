@@ -1,0 +1,40 @@
+{
+    "name": "superhabber/mill",
+    "description": "Millenium PHP framework is a simple and modern framework",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yaroslav Palamarchuk",
+            "email": "superhabber@gmail.com",
+            "homepage": "https://github.com/superhabber",
+            "role": "founder, developer"
+        }
+    ],
+    "support": {
+        "email": "milleniumframework@gmail.com",
+        "issues": "https://github.com/milleniumphp/milleniumframework/issues",
+        "source": "https://github.com/milleniumphp/milleniumframework",
+        "docs": "https://milleniumframework.github.io/documentation/"
+    },
+    "require": {
+        "vlucas/valitron": "~1.4.3",
+        "robmorgan/phinx": "^0.10.3"
+    },
+    "require-dev": {
+       "codeception/codeception": "^2.4.3"
+    },
+    "autoload": {
+        "files": [
+            "vendor/superhabber/libs/basic/aliases.php",
+            "vendor/superhabber/libs/basic/functions.php",
+            "vendor/superhabber/Mill.php"
+        ],
+        "psr-4": {
+            "mill\\": "vendor/superhabber",
+            "app\\": "app",
+            "sections\\": "sections"
+        }
+    }
+    
+}

@@ -1,0 +1,221 @@
+Dicas sobre o Composer
+
+Site oficial 
+https://getcomposer.org
+
+Documentação
+https://getcomposer.org/doc/
+
+É um gerenciador de dependências para PHP, com bons recursos para instalar, atualizar e gerenciar módulos em PHP. Ele checa quais as dependências de um pacote e as instala, usando as versões indicadas.
+
+Pré-requisitos para sua instalação:
+- PHP 5.3.2 ou superior
+- curl
+- php-cli
+- php-mbstring
+- git
+- unzip
+
+Para Windows
+https://getcomposer.org/doc/00-intro.md#using-the-installer
+
+Para Linux
+sudo apt install composer
+
+Testando
+
+composer list
+
+Options:
+  -h, --help                     Display this help message
+  -q, --quiet                    Do not output any message
+  -V, --version                  Display this application version
+      --ansi                     Force ANSI output
+      --no-ansi                  Disable ANSI output
+  -n, --no-interaction           Do not ask any interactive question
+      --profile                  Display timing and memory usage information
+      --no-plugins               Whether to disable plugins.
+  -d, --working-dir=WORKING-DIR  If specified, use the given directory as working directory.
+  -v|vv|vvv, --verbose           Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+
+Alguns commands:
+  archive              Creates an archive of this composer package.
+  clear-cache          [clearcache] Clears composer's internal package cache.
+  config               Sets config options.
+  create-project       Creates new project from a package into given directory.
+  depends              [why] Shows which packages cause the given package to be installed.
+  dump-autoload        [dumpautoload] Dumps the autoloader.
+  help                 Displays help for a command
+  init                 Creates a basic composer.json file in current directory.
+  install              Installs the project dependencies from the composer.lock file if present, or falls back on the composer.json.
+  remove               Removes a package from the require or require-dev.
+  require              Adds required packages to your composer.json and installs them.
+  run-script           Runs the scripts defined in composer.json.
+  search               Searches for packages.
+  show                 [info] Shows information about packages.
+  update               [upgrade] Upgrades your dependencies to the latest version according to composer.json, and updates the composer.lock file.
+  validate             Validates a composer.json and composer.lock.
+
+O Packagist.org é o principal repositório de pacotes para o Composer - https://packagist.org/
+
+Busca por pacotes cadastrados no repositório
+composer search nome_pacote
+
+Bloqueando o uso do update:
+composer update --lock
+
+Após cada alteração no composer.json:
+composer dump-autoload
+
+
+Instalando uma dependência/pacote em um projeto
+
+cd projeto
+composer require vendor_nome/pacote_nome
+
+Ele cria a pasta vendor no diretório atual com as dependências dentro.
+
+Ajuda
+composer help require
+
+Arquivos importantes:
+
+composer.json
+composer.lock
+autoload.php
+
+composer.json
+https://getcomposer.org/doc/04-schema.md
+
+Instalando um pacote:
+
+composer require vendor/nomepacote
+
+Criando um pacote com o composer
+
+composer init
+
+Opções:
+    --name: Name of the package.
+    --description: Description of the package.
+    --author: Autor no formato: Nome <autor@email.com>
+    --type: Type of package.
+    --homepage: Homepage of the package.
+    --require: Pacote para o require com uma versão. No formato vendor/pacote:1.0.0.
+    --require-dev: Requisitos de desenvolvimento. Vide --require.
+    --stability (-s): Valor para o campo minimum-stability.
+    --license (-l): Licença do package.
+    --repository: Provide one (or more) custom repositories. They will be stored in the generated composer.json, and used for auto-completion when prompting for the list of requires. Every repository can be either an HTTP URL pointing to a composer repository or a JSON string which similar to what the repositories key accepts.
+
+
+Outros comandos:
+
+composer run-script [--dev] [--no-dev] script
+
+
+Publicando projeto para ser instalado com composer:
+
+- Hospedar no GitHub ou similar
+- Publicar no Packagist e configurar a atualização automática
+- Instalar com o composer
+
+Dicas:
+
+- Adicione composer.lock no .gitignore em libraries
+- Ordene os pacotes no require ou require-dev pelo nome
+- Validar o composer.json:
+    composer validate --no-check-all --strict
+- Especificando duas versões do PHP:
+"require": {
+    "php": "7.1.* || 7.2.*"
+},
+- Configurar autoload-dev para testes:
+"autoload": {
+    "psr-4": {
+        "Acme\\": "src/"
+    }
+},
+"autoload-dev": {
+    "psr-4": {
+        "Acme\\": "tests/"
+    }
+},
+
+Dicas do composer.json
+
+{
+    "name": "Nome do projeto",
+    "description": "Breve descrição do que a aplicação se propoe a fazer",
+    "authors": [
+        {
+            "name": "Seu nome",
+            "email": "seu-email@seu-dominio.com",
+            "homepage": "https://github.com/cakephp/acl/graphs/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.2.8"
+    }
+
+    "homepage": "http://cakephp.org",
+
+    "support": {
+        "issues": "https://github.com/cakephp/acl/issues",
+        "forum": "http://stackoverflow.com/tags/cakephp",
+        "irc": "irc://irc.freenode.org/cakephp",
+        "source": "https://github.com/cakephp/acl"
+
+    },
+
+    "suggest": {
+        "twbs/bootstrap": "Twitter Bootstrap front-end framework, for styles and layout.",
+        "friendsofcake/search": "Filtering for index templates to find things easier.",
+        "friendsofcake/crud": "Production ready scaffolding for controllers. Don't even bother writing code!"
+    },
+}
+
+suggest - sugestão de plugins semelhantes e/ou úteis
+
+Usando os softwares instalados pelo composer. Criar um arquivo e digitar nas primeiras linhas:
+
+<?php
+require "vendor/autoload.php";
+
+// aqui pode executar o software
+
+
+Desinstalar plugin
+
+composer remove packageauthor/packagename --update-with-dependencies
+
+Corrigir erros do composer
+
+composer config --global repositories.packagist.allow_ssl_downgrade false
+
+ou
+Adicionar ao composer.json
+
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packagist.org"
+        },
+        { "packagist": false }
+    ],
+
+composer update
+composer clear-cache
+
+
+Dicas extras
+
+Instalar o último release estável
+composer require ribafs/admin-br
+
+Instalar um determinado release
+composer require ribafs/admin-br:1.30
+
+Instalar a versão atual em desenvolvimento
+composer require ribafs/admin-br:dev-master
+
+

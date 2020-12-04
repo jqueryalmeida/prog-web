@@ -1,0 +1,12 @@
+Inicialmente criar um backup do ribafs.org
+
+Site estático criado pelo wget a partir de um site com o CMS Joomla
+
+Antes de gerar o site estático fiz umas adaptações no Joomla para compatibilizar com um site estático.
+Desabilitei a busca do Joomla e instalei um módulo que fiz usando o Google para busca.
+Agrupei alguns itens de menu para que fiquem tudo numa única linha da tela e não sobrando para a outra linha
+Remover o componente contato
+
+Para hospedar no GitHub, em repositório público, não pode ter binários:
+
+

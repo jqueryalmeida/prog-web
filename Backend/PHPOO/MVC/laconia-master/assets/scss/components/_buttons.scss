@@ -1,0 +1,109 @@
+/* Buttons
+  =============== */
+
+// Main button styling
+%buttons {
+  -webkit-appearance: none;
+  display: inline-block;
+  border: $button-border-width $button-border-style $button-border-color;
+  border-radius: $button-border-radius;
+  background: $button-background;
+  color: $button-color;
+  font-weight: $button-font-weight;
+  font-family: $button-font-family;
+  font-size: $button-font-size;
+  text-transform: $button-text-transform;
+  padding: .75rem 1rem;
+  margin: 0;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+}
+
+// Buttons on hover
+%buttons-hover {
+  border: $button-border-width $button-border-style darken($button-border-color, 10%);
+  background: $button-background-hover;
+  color: $button-color;
+  text-decoration: none;
+}
+
+// Buttons on focus
+%buttons-focus {
+  border: $button-border-width $button-border-style darken($button-border-color, 10%);
+  background: darken($button-background, 10%);
+  color: $button-color;
+  text-decoration: none;
+}
+
+// Apply styles to .button class, button element, and button-based inputs
+#{$buttons} {
+  @extend %buttons;
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+  &:hover {
+    @extend %buttons-hover;
+  }
+  &:focus,
+  &:active {
+    @extend %buttons-focus;
+  }
+}
+
+@include small-breakpoint {
+  #{$buttons} {
+    padding: 1rem 1.5rem;
+  }
+}
+
+// Secondary button color
+.accent-button,
+a.accent-button {
+  color: white;
+  border: 2px solid darken($primary-color, 10%);
+  background: darken($primary-color, 10%);
+  &:hover,
+  &:focus,
+  &:active {
+    color: white;
+    border: 2px solid darken($primary-color, 18%);
+    background: darken($primary-color, 18%);
+  }
+}
+
+// Muted buttons
+.muted-button,
+a.muted-button {
+  background: transparent;
+  border: 2px solid $primary-color;
+  color: $primary-color;
+  &:hover,
+  &:focus,
+  &:active {
+    border: 2px solid $primary-color;
+    background: $primary-color;
+  }
+}
+
+// Round buttons
+.round-button,
+a.round-button {
+  border-radius: $round-buttons;
+}
+
+// Square buttons
+.square-button,
+a.square-button {
+  border-radius: 0;
+}
+
+// Full width buttons (block level)
+.full-button,
+a.full-button {
+  display: block;
+  width: 100%;
+}

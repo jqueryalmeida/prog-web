@@ -1,0 +1,4 @@
+Criar banco
+Configurar em App/Config.php
+Acessar diretório pelo terminal e executar
+composer update

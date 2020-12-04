@@ -1,0 +1,29 @@
+Curso de PHP 7 - 55 aulas
+https://www.youtube.com/playlist?list=PLwXQLZ3FdTVEITn849NlfI9BGY-hk1wkq
+
+Curso de PHP, inclusive POO - 18 aulas
+https://www.youtube.com/playlist?list=PLhUp81I0jET71gMTWy50cpAYHrWnVnYlA
+
+Visibilidade, a default é a public
+
+
+Includes, require, include_once e require_once
+
+
+https://www.youtube.com/watch?v=oT7qY8nLJ6k
+
+Remover objeto da memória:
+
+unset($objeto);
+
+Operador seta ->
+
+$objeto->propriedade;
+
+$objeto->metodo();
+
+propriedades - características dos objetos
+
+métodos - ações dos objetos
+
+

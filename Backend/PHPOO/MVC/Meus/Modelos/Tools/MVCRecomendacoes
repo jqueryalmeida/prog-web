@@ -1,0 +1,31 @@
+Alguns cuidados ao criar uma aplicação que use MVC:
+- Composer e PSR-4
+- Usar o front controller, um arquivo index.php, que chama o arquivo src/bootstrap.php
+- A pasta ou arquivo de configuração fica fora das pastas do MVC, mas dentro de src
+- Use .htaccess para redirecionamento, mas somente se usar um router
+- Ter um controller para error e template
+
+Sugestão
+
+.htaccess
+/public/index.php
+/public/.htaccess
+/src
+    /config/config.php
+    bootstrap.php
+    /Controller
+    /Model
+    /View
+    /template
+
+
+Fluxo MVC
+
+Front controller -> bootstrap -> router -> controller -> action -> método do model -> método da view (mini3)
+                        |
+                        c
+                        o
+                        n
+                        f
+                        i
+                        g

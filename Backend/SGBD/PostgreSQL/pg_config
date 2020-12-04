@@ -1,0 +1,41 @@
+Configuração do PostgreSQL para uso com Web
+
+Instalar
+
+Linux
+sudo apt install postgresql
+
+Windows
+https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+
+Atribuindo Senha ao superuser do PostgreSQL no Linux (no Windows é fetia na instalação)
+
+Acesse o terminal
+sudo su
+su - postgres
+psql
+alter role postgres password 'postgres';
+\q
+exit
+
+Configurar o pg_hba.conf
+
+nano /etc/postgresql/12/main/pg_hba.conf
+
+Trocar a linha
+local   all             postgres                                peer
+
+Por
+local   all             postgres                                md5
+
+Reiniciar o serviço
+sudo service postgresql restart
+
+Agora já pode usar qualquer gerenciador para gerenciar ou o próprio console
+
+https://www.pgadmin.org/
+
+https://www.adminer.org/
+
+https://www.dbvis.com/
+

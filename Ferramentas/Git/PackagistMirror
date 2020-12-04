@@ -1,0 +1,11 @@
+Packagist
+
+Habilitar
+composer config -g repos.packagist composer https://packagist.in
+
+Desabilitar
+composer config -g --unset repos.packagist
+
+Lista
+https://github.com/webysther/packagist-mirror
+

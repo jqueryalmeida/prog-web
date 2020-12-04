@@ -1,0 +1,12 @@
+composer update
+
+Login
+	+ Admin:
+		+ Email: admin@demo.com
+		+ Password: 12345
+	+ Normal User:
+		+ Email: user@demo.com
+		+ Password: 12345
+
+https://github.com/OmarElGabry/miniPHP/
+http://omarelgabry.github.io/miniPHP/
