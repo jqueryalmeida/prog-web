@@ -70,3 +70,21 @@ Isso acima é feito no php.ini.
 Mini Framework MVC com PHP #01 - Criando a estrutura do projeto - https://www.youtube.com/watch?v=A1rVfAZ4hk8
 
 Eu criei a função d() tendo como referência a função dd() do Bruno Correia citada no vídeo acima.
+
+## Exemplo dentro de um laço, usando o false
+
+```php
+require 'd.php';
+foreach ($clients as $client) {
+
+d($client,false);
+```
+![](img/d.png)
+
+## Agora o mesmo exemplo mas não usando false
+
+Então ele para ao processar a primeira vez.
+E encerra o processamento do script.
+
+![](img/d2.png)
+
