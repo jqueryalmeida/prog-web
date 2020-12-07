@@ -122,3 +122,15 @@ require_once 'd.php';
 Agora, em qualquer arquivo podemos usar apenas:
 
 d($var);
+
+## Economizando toques
+
+Ao invés de digitar
+
+print 'AQUI';exit;
+
+Podemos digitar apenas
+
+d('AQUI');
+
+Ainda ganhamos o destaque do vermelho.
