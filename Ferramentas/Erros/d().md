@@ -88,3 +88,37 @@ E encerra o processamento do script.
 
 ![](img/d2.png)
 
+## Sugestão
+
+Para que não precise ficar digitando o require, precisamos usá-lo num arquivo que foi incluído no aplicativo, logo no início.
+
+Um bom lugar é inserir no início do config.php:
+
+define('ENVIRONMENT', 'dev'); // Or 'prod'
+
+if (ENVIRONMENT == 'dev') {
+    error_reporting(E_ALL);
+    ini_set("display_errors", 1);
+    require_once 'd.php';
+}
+
+Pronto. Daqui pra frente basta inserir a função
+
+d($var); // Para encerrar após processar
+
+ou
+
+d($var, false); // Para poder processar mais variáveis antes de sair
+d($var2); // Processar e sair
+
+## Laravel
+
+No laravel podemos inserir logo no início do config/app.php
+
+<?php
+
+require_once 'd.php';
+
+Agora, em qualquer arquivo podemos usar apenas:
+
+d($var);
