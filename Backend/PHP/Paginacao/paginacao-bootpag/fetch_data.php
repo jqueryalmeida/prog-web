@@ -1,5 +1,5 @@
 <?php
-include_once("db_connect.php");
+include_once("connection.php");
 
 if (isset($_POST["page"])) {
     $page_no = filter_var($_POST["page"], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);

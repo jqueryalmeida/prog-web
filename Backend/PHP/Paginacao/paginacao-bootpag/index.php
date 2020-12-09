@@ -1,5 +1,5 @@
 <?php
-include_once("db_connect.php");
+include_once("connection.php");
 
 $stmt = $pdo->prepare("SELECT COUNT(*) FROM customers");
 $stmt->execute();
@@ -54,12 +54,23 @@ $total_pages = ceil($rows[0]/$row_limit);
 $(document).ready(function() {
     $("#pg-results").load("fetch_data.php");
     $(".pagination").bootpag({
-        total: <?php echo $total_pages; ?>,
+        total: <?php echo $totalPages; ?>,
         page: 1,
-        maxVisible: 5
+        maxVisible: <?php echo $conn->linksPerPage; ?>,
+        leaps: true,
+        firstLastUse: true,
+        first: 'Primeiro',//←
+        last: 'Último',//→
+        wrapClass: 'pagination',
+        activeClass: 'active',
+        disabledClass: 'disabled',
+        nextClass: 'next',
+        prevClass: 'prev',
+        lastClass: 'last',
+        firstClass: 'first'
     }).on("page", function(e, page_num){
-        e.preventDefault();
-        /*$("#results").prepend('<div class="loading-indication"><img src="ajax-loader.gif" /> Loading...</div>');*/
+        //e.preventDefault();
+        $("#results").prepend('<div class="loading-indication"> Loading...</div>');
         $("#pg-results").load("fetch_data.php", {"page": page_num});
     });
 });
