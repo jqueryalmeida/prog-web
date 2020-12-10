@@ -72,6 +72,12 @@ smb://192.168.0.33
 - Tecle enter
 - Entre com login e senha do windows
 
+## Alternativamente no nemo ou nautilus
+
+- Arquivo - Conectar a um servidor
+- Em Tipo - Compartilhamento do windows
+- Em Nome do domínio pode deixar em branco
+
 ## Referência
 
 https://www.todoespacoonline.com/w/2015/06/compartilhamento-de-arquivos-entre-linux-e-windows/
