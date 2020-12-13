@@ -1,10 +1,14 @@
 # Configurar as permissões do /var/www/html
 
-Adiciona seu user ao grupo do apache
+Uso estas configurações em meu desktop linux e também em servidores VPS. Não são as ideais, mas já tornam a vida bem mais confortável do que o comportamento padrão das permissões, que somente permitem alterações com sudo ou root.
+
+## Adiciona seu user ao grupo do apache
 
 Troque ribafs pelo seu user
 
 sudo adduser ribafs www-data
+
+## Criar o script
 
 sudo nano /usr/local/bin/perms
 
@@ -20,9 +24,12 @@ chown -R ribafs:www-data /var/www/html/$1/
 echo "";
 echo "Concluído!";
 ```
+
+## Dar permissão de execução
+
 sudo chmod +x /usr/local/bin/perms
 
-Executando
+## Executando
 
 Varrer a pasta /var/www/html/teste
 
@@ -42,22 +49,24 @@ Varrer todo o /var/www/html
 
 sudo perms
 
-
 ## Virtual Host
 
-Gosto de criar um virtualhost em minha pasta de usuário, onde tenho mais permissões. Pra valer eu tenho uma partição /backup, onde crio a apsta www e crio o vistualhost nela, mas podemos também criar em
+Para mais conforto gosto de criar um virtualhost em minha pasta de usuário, onde temos mais permissões.
 
-Troque ribafs pelo seu user
+## Criarei o virtualhost na pasta
 
 /home/ribafs/www
 
-Que fica legal em termos de permissão
+## Adicionar ao hosts
 
 sudo nano /etc/hosts
 
 127.0.0.1	backup
 
+## Criar o script
+
 sudo nano /etc/apache2/sites-available/backup.conf
+
 ```bash
 <VirtualHost *:80>
 ServerAdmin ribafs@gmail.com
@@ -74,14 +83,19 @@ CustomLog ${APACHE_LOG_DIR}/access.log combined
     DirectoryIndex index.html index.php
 </Directory>
 </VirtualHost>
+
+## Habilitar
 ```
 sudo a2ensite backup
 
+## Reload no apache
+
 sudo service apache2 reload
 
-Criei outro script para ajustar as permissões em /home/ribafs/www
+## Criar script para ajustar as permissões em /home/ribafs/www
 
 sudo nano /usr/local/bin/backup
+
 ```bash
 #!/bin/sh
 clear;
