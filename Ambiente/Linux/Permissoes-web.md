@@ -1,6 +1,8 @@
 # Configurar as permissões do /var/www/html
 
-Uso estas configurações em meu desktop linux e também em servidores VPS. Não são as ideais, mas já tornam a vida bem mais confortável do que o comportamento padrão das permissões, que somente permitem alterações com sudo ou root.
+Por padrão o linux não permite que usuários comuns alterem ou criem arquivos em /var/www/html. Mesmo se criarmos um virtualhost em /home/ribafs ainda assim rpecisa de ajustes nas permissões e no dono dos arquivos. Para criar um arquivo no /var/www/html precisamos usar o sudo.
+
+Uso estas configurações em meu desktop linux e também em servidores VPS para um uso mais confortável. Não são as ideais, mas já tornam a vida bem mais confortável do que o comportamento padrão das permissões, que somente permitem alterações com sudo ou root. E estas configurações oferecem segurança, pois ajustam as permissões de pastas para 755 e de arquivos para 644, ou seja, somente o dono e os do grupo podem escrever. Nunca devemos ajustar as permissões para 777. Se não sabemos como proceder devemos estudar e não apelar, especialmente se estivermos em um servidor.
 
 ## Adiciona seu user ao grupo do apache
 
