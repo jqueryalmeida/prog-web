@@ -2,11 +2,11 @@
 
 Adiciona seu user ao grupo do apache
 
+Troque ribafs pelo seu user
+
 sudo adduser ribafs www-data
 
 sudo nano /usr/local/bin/perms
-
-Troque ribafs pelo seu user
 
 ```bash
 #!/bin/sh
