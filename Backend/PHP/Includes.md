@@ -66,9 +66,9 @@ Então quando trabalharmos com includes precisamos entender que o arquivo inclu�
 
 ## Caminho relativo e absoluto
 
-Absoluto é todo o caminho desde o raiz da partição.
+**Absoluto** é todo o caminho desde o raiz da partição.
 
-Relativo é o caminho comparado com o atual.
+**Relativo** é o caminho comparado com o atual.
 
 Absoluto - /var/www/html/clients/index.php ou c:\xampp\htdocs\clients\index.php
 
@@ -96,13 +96,21 @@ Dois níveis antes '../../pasta';
 
 ## Tipos de includes
 
-include - pode incluir várias vezes o mesmo arquivo e o processará e em caso de erro continua o processamento
+### include
 
-include_once - pode incluir somente uma vez e em caso de erro continua o processamento.  Este é um comportamento similar a declaração include, com a única diferença que, se o código do arquivo já foi incluído, não o fará novamente, e o include_once retornará true. Como o nome sugere, o arquivo será incluído somente uma vez. O include_once pode ser utilizado em casos em que o mesmo arquivo pode ser incluído e valiado mais de uma vez durante uma execução de um script em particular, neste caso, ajudará a evitar problemas como redefinição de funções, reatribuição de valores de variáveis, e etc. 
+Pode incluir várias vezes o mesmo arquivo e o processará e em caso de erro continua o processamento
 
-require - pode ser incluído várias vezes o mesmo arquivo e o processará mas em caso de erro no arquivo incluído o processamento será paprado com erro fatal. A declaração require é idêntica a include exceto que em caso de falha também produzirá um erro fatal de nível E_COMPILE_ERROR. Em outras palavras, ele parará o script enquanto que o include apenas emitirá um alerta (E_WARNING) permitindo que o script continue. 
+### include_once
 
-require_once - pode ser incluído somente uma única vez mas em caso de erro no arquivo incluído o processamento será paprado com erro fatal. A declaração require_once é idêntica a requirem exceto que o PHP verificará se o arquivo já foi incluído, e em caso afirmativo, não o incluirá (exigirá) novamente. 
+Pode incluir somente uma vez e em caso de erro continua o processamento.  Este é um comportamento similar a declaração include, com a única diferença que, se o código do arquivo já foi incluído, não o fará novamente, e o include_once retornará true. Como o nome sugere, o arquivo será incluído somente uma vez. O include_once pode ser utilizado em casos em que o mesmo arquivo pode ser incluído e valiado mais de uma vez durante uma execução de um script em particular, neste caso, ajudará a evitar problemas como redefinição de funções, reatribuição de valores de variáveis, e etc. 
+
+### require
+
+Pode ser incluído várias vezes o mesmo arquivo e o processará mas em caso de erro no arquivo incluído o processamento será paprado com erro fatal. A declaração require é idêntica a include exceto que em caso de falha também produzirá um erro fatal de nível E_COMPILE_ERROR. Em outras palavras, ele parará o script enquanto que o include apenas emitirá um alerta (E_WARNING) permitindo que o script continue. 
+
+### require_once
+
+Pode ser incluído somente uma única vez mas em caso de erro no arquivo incluído o processamento será paprado com erro fatal. A declaração require_once é idêntica a requirem exceto que o PHP verificará se o arquivo já foi incluído, e em caso afirmativo, não o incluirá (exigirá) novamente. 
 
 ## Meu preferido
 
