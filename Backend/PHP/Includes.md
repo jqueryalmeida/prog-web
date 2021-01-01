@@ -4,21 +4,17 @@ Exemplo simples
 
 a.php
 
-<?php
+lgt;?php
 
 $varA = 'A';
 
 
 b.php
 
-<?php
-
 $varB = 'B';
 
 
 c.php
-
-<?php
 
 echo 'Este arquivo recebe os includes dos outros dois: a.php e b.php';
 
