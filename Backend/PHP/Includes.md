@@ -1,5 +1,9 @@
 # Trabalhando com includes em PHP
 
+## Vale lembrar
+
+Que o PHP atualmente, quando trabalhamos com orientação a objetos, é muito mais interessante trabalhar com namespaces e autoload com PSR-4. Inclusive os grandes frameworks fazem isso. Essa abordagem abaixo é somente para quando criamos um pequeno aplicativo com PHP estruturado.
+
 Exemplo simples
 
 a.php
