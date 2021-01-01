@@ -39,11 +39,11 @@ index.php
 
 /clients/header.php
 
-/assets/css/estilo.css
+/assets/css/style.css
 
-No clients/header.php iremos incluir o /assets/css/estilo.css
+No /clients/header.php iremos incluir o /assets/css/style.css
 
-Pela lógica no clients/header.php para incluir o /assets/css/estilo.css, subirá um nível para ficar no mesmo nível de /assets e faria assim:
+Pela lógica no clients/header.php para incluir o /assets/css/style.css, subirá um nível para ficar no mesmo nível de /assets e faria assim:
 
 require_once '../assets/css/style.css';
 
