@@ -4,8 +4,6 @@ Exemplo simples
 
 a.php
 
-lgt;?php
-
 $varA = 'A';
 
 
