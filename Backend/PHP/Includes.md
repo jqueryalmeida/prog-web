@@ -37,32 +37,34 @@ As variáveis $varA e $varB estarão disponíveis no arquivo c.php.
 
 ## Path nos includes
 
+Depois de algmas discussões nos grupos, percebi que meu exemplo tem um erro. Realmente, um arquivo style.css não deve ser incluído pelo PHP, mas pelo HTML. Então vamos mudar nosso exemplo:
+
 Imagine a seguinte estrutura
 
 index.php
 
-/clients/header.php
+/clients/teste.php
 
-/assets/css/style.css
+/clients/includes/arq.php
 
-No /clients/header.php iremos incluir o /assets/css/style.css
+No /clients/teste.php iremos incluir o /clients/includes/arq.php
 
-Pela lógica no clients/header.php para incluir o /assets/css/style.css, subirá um nível para ficar no mesmo nível de /assets e faria assim:
+Pela lógica no clients/teste.php para incluir o /clients/includes/arq.php, subirá um nível para ficar no mesmo nível de /clients e faria assim:
 
-require_once '../assets/css/style.css';
+require_once '../clients/includes/arq.php';
 
-No index.php iremos incluir o clients/header.php
+No index.php iremos incluir o clients/teste.php
 
-Mas precisamos entender que header.php será incluído pelo index.php, então ele ficará no mesmo nível do index.php, que é o mesmo do /assets, então o
-header.php deve ter um include assim:
+Mas precisamos entender que header.php será incluído pelo index.php, então ele ficará no mesmo nível do index.php, que é o mesmo do /clients, então o
+teste.php deve ter um include assim:
 
-require_once 'assets/css/style.css';
+require_once '/clients/includes/arq.php';
 
 Para que funcione corretamente.
 
 Experimente usar 
 
-require_once '../assets/css/style.css';
+require_once '../clients/includes/arq.php';
 
 O PHP irá dizer que não encontrou o arquivo.
 
